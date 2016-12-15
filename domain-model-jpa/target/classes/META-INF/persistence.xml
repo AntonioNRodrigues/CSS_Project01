@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="domain-model-jpa" transaction-type="RESOURCE_LOCAL">
+		<class>business.Customer</class>
+		<class>business.Discount</class>
+		<class>business.EligibleProductsDiscount</class>
+		<class>business.ThresholdPercentageDiscount</class>
+		<class>business.NoDiscount</class>
+		<class>business.Unit</class>
+		<class>business.Product</class>
+		<class>business.SaleProduct</class>
+		<class>business.Sale</class>
+		<class>business.entities.Credit</class>
+		<class>business.entities.Debit</class>
+		<class>business.entities.Account</class>
+		<class>business.entities.Transation</class>
+		<shared-cache-mode>NONE</shared-cache-mode> <!-- para permitir fazer testes de integração usando o DBSetup -->
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/CSSWork"/>
+			<property name="javax.persistence.jdbc.user" value="root"/>
+			<property name="javax.persistence.jdbc.password" value="root"/>
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+		</properties>
+	</persistence-unit>
+</persistence>

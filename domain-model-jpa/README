@@ -1,0 +1,74 @@
+In order to create a derby database to run the project, do the following:
+
+1. Find the "Data Source Explorer" view
+1.1 if not open, open it from Window > Show View > Other... > Data Management > Data Source Explorer
+
+2. Create a connection to the Derby Database from the Data Source Explorer view. For that:
+2.1 From the context menu on "Database Connections" select "New ..."
+2.2 Select the Derby database
+2.3 If no Derby Driver Created yet, select the not created yet, create a new Driver, 
+by pressing the circle with the + icon (the first after the combo box)
+2.3.1 Select "Derby Embedded JDBC Driver ",  version 10.2
+2.3.2 In the JAR list tab select the derby.jar and press the "Edit JAR/Zip" button
+2.3.3 The derby jar driver is in the .m2 folder in your home dir. The full path is
+/yourHomeDir/.m2/repository/org/apache/derby/derby/10.12.1.1/derby-10.12.1.1.jar
+2.3.4 Connection properties:
+- Database location: TheLocationOfYourDomainModelJPAFolder/data/derby/css000. 
+The connection will create the derby folders in case they do not exists.
+- Username: css000
+- Password: css000
+URL: jdbc:derby:TheSameFolderAsInTheDatabaseLocation;create=true
+(it should be updated automatically)
+2.3.5 Press the "Test Connection" button to check that everything is ok
+2.4 If you already have a Derby Driver, select it from the combobox
+
+3. Associate the connection with the project
+3.1 Select the project
+3.2 From the context menu > properties > JPA
+3.3 In the Platform choose Eclipse Link 2.4.x/2.5.x
+3.4 In the Connection select the connection you just created
+
+4. Generate database tables from the context menu > JPA Tools > Generate tables from entities
+
+5. Force JPA validation by changing and entity (adding a space somewhere) and saving the files.
+
+6. Your project should be error free now 
+
+7. Insert Discont types, units, and products in the database
+7.1 open the load-script.sql file from src/main/resources/META-INF/load-script.sql
+7.2 fill the fields on top:
+Type: Derby 10.x
+Name: your connection name
+Database: css000
+7.3 from the context menu (in the load-script editor) choose the "Execute All"
+7.4 In the SQL Results view observe that the delete and insert commands execute
+without errors. Every time you need to reset the database data, rerun the script
+
+8. Copy the persistence-derby.xml to persistence.xml
+(in folder src/main/resources/META-INF)
+
+9. You can now run the startup.Startup
+
+10. If you want to run using the MySql database
+10.1 create a connection to the dbserver as explained before for the Derby connection
+10.2 select the MySql driver in 
+/yourHomeDir/.m2/repository/mysql/mysql-connector-java/5.1.38/mysql-connector-java-5.1.38.jar
+
+10.3 The connection information is
+Database: css000
+URL: jdbc:mysql://dbserver.alunos.di.fc.ul.pt:3306/css000
+User name: css000
+Password: css000
+
+Ping the connection. Do not forget to turn on the FCUL VPN connection.
+
+10.4 Associate the connection with the project as before
+10.5 Create the database as before
+10.6 Run the script to populate the database. Now you need to select 
+Mysql, the connection and the css000 database. 
+
+10.7 Copy the persistence-mysql.xml to persistence.xml
+(in folder src/main/resources/META-INF)
+
+10.8 you can run the same application but now using a MySQL database
+

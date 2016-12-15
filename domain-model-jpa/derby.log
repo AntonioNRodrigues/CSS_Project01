@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Tue May 03 23:20:25 WEST 2016:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-0154-78b5-436a-000002c5c990 
+on database directory /home/antonio/Dropbox/Projects/CSSProject/css0181516/domain-model-jpa/data/derby/css000 with class loader sun.misc.Launcher$AppClassLoader@73d16e93 
+Loaded from file:/home/antonio/.m2/repository/org/apache/derby/derby/10.12.1.1/derby-10.12.1.1.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_91-b14
+user.dir=/home/antonio/Dropbox/Projects/CSSProject/css0181516/domain-model-jpa
+os.name=Linux
+os.arch=amd64
+os.version=4.2.0-35-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
